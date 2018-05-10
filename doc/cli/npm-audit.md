@@ -3,14 +3,19 @@ npm-audit(1) -- Run a security audit
 
 ## SYNOPSIS
 
-    npm audit 
+    npm audit
+    npm audit fix
 
-## DESCRIPTION 
+## DESCRIPTION
 
 The audit command submits a description of the dependencies configured in
 your project to your default registry and asks for a report of known
-vulnerabilities.  The report returned includes instructions on how to act on
+vulnerabilities. The report returned includes instructions on how to act on
 this information.
+
+You can also have npm automatically fix the vulnerabilities by running `npm
+audit fix`. Note that some vulnerabilities cannot be fixed automatically and
+will require manual intervention or review.
 
 ## CONTENT SUBMITTED
 
@@ -29,7 +34,7 @@ the following dependency types:
 
 * Any module referencing a scope that is configured for a non-default
   registry has its name scrubbed.  (That is, a scope you did a `npm login --scope=@ourscope` for.)
-* All git dependencies have their names and specifiers scrubbed. 
+* All git dependencies have their names and specifiers scrubbed.
 * All remote tarball dependencies have their names and specifiers scrubbed.
 * All local directory and tarball dependencies have their names and specifiers scrubbed.
 
